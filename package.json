@@ -1,0 +1,23 @@
+{
+  "name": "mongo_db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HananMohammed/mongo_db.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HananMohammed/mongo_db/issues"
+  },
+  "homepage": "https://github.com/HananMohammed/mongo_db#readme",
+  "dependencies": {
+    "mongoose": "^6.0.8"
+  }
+}
