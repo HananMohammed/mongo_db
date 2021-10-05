@@ -2,18 +2,30 @@ const mocha = require('mocha');
 const assert = require('assert')
 const Mariochar = require('./../models/mariochar')
 //Describe Tests
-describe('Saving Records To DB  !!!!', function (){
-    // Create Tests
-    it("Saves a record to db ", function (done) {
-        let char = new Mariochar({
+describe('Finding Records  !!!!', function (){
+    let char;
+    beforeEach(function (done){
+         char = new Mariochar({
             name:'Mario',
-            weight: 10
         });
         char.save().then(function () {
-            assert(char.isNew === false )
+            assert(char.isNew === false);
             done();
         });
+    });
+
+    it("Finding One Record From The Datatbase  ", function (done) {
+       Mariochar.findOne({name: 'Mario'}).then(function (res) {
+           assert(res.name === 'Mario')
+           done()
+       })
+    })
+
+    it("Finding One Record From The Datatbase By id ", function (done) {
+        Mariochar.findOne({_id: char._id}).then(function (res) {
+            assert(res._id.toString() === char._id.toString())
+            done()
+        })
     })
 
 })
-//
